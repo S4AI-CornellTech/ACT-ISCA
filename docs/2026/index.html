@@ -154,6 +154,113 @@
       <div class="w-16 h-1 bg-emerald-500 rounded mb-4"></div>
       <p class="text-slate-500 text-sm mb-10">A cross-stack methodology spanning recent publications at ISCA, ICCAD, and DATE.</p>
 
+      <!-- Cross-stack pyramid diagram -->
+      <div class="relative mb-16 select-none">
+
+        <!-- Flow arrows (left & right) -->
+        <div class="hidden lg:flex flex-col items-center justify-center absolute left-0 top-0 bottom-0 w-16 gap-2 pointer-events-none">
+          <div class="flex flex-col items-center gap-1">
+            <svg width="28" height="80" viewBox="0 0 28 80"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#10b981"/></marker></defs><line x1="14" y1="75" x2="14" y2="8" stroke="#10b981" stroke-width="2.5" marker-end="url(#ah)"/></svg>
+            <span class="text-emerald-600 font-bold text-xs tracking-wide leading-tight text-center" style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;">BOTTOM-UP MODELING FLOW</span>
+            <span class="text-emerald-500 text-center leading-tight" style="font-size:9px;writing-mode:vertical-rl;transform:rotate(180deg);">(Data from Device → Software)</span>
+          </div>
+        </div>
+        <div class="hidden lg:flex flex-col items-center justify-center absolute right-0 top-0 bottom-0 w-16 gap-2 pointer-events-none">
+          <div class="flex flex-col items-center gap-1">
+            <span class="text-slate-500 font-bold text-xs tracking-wide leading-tight text-center" style="writing-mode:vertical-rl;font-size:10px;">TOP-DOWN OPTIMIZATION FLOW</span>
+            <span class="text-slate-400 text-center leading-tight" style="font-size:9px;writing-mode:vertical-rl;">(Metrics inform better design)</span>
+            <svg width="28" height="80" viewBox="0 0 28 80"><defs><marker id="ah2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#94a3b8"/></marker></defs><line x1="14" y1="5" x2="14" y2="72" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#ah2)"/></svg>
+          </div>
+        </div>
+
+        <!-- Pyramid layers (bottom = widest, top = narrowest) -->
+        <div class="flex flex-col items-center gap-1 lg:px-20">
+
+          <!-- Layer 1: Application (top / narrowest) -->
+          <div class="w-full max-w-sm rounded-xl px-5 py-4 text-center" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">
+            <div class="text-xs font-bold text-violet-700 uppercase tracking-widest mb-3">Software Applications &amp; Systems</div>
+            <div class="flex flex-wrap justify-center gap-2">
+              <a href="https://dl.acm.org/doi/10.1145/3695053.3731023" target="_blank" class="group bg-white/80 hover:bg-violet-600 border border-violet-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-violet-700 group-hover:text-white">FAIR-CO&#8322;</span>
+                <div class="text-xs text-violet-500 group-hover:text-violet-100 leading-tight">Software-level Carbon Attribution</div>
+              </a>
+              <a href="https://arxiv.org/abs/2309.14393" target="_blank" class="group bg-white/80 hover:bg-violet-600 border border-violet-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-violet-700 group-hover:text-white">LLM Carbon</span>
+                <div class="text-xs text-violet-500 group-hover:text-violet-100 leading-tight">LLM Lifecycle Carbon</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Layer 2: Infrastructure + Platform -->
+          <div class="w-full max-w-xl rounded-xl px-5 py-4 text-center" style="background:linear-gradient(135deg,#e0f2fe,#bae6fd);">
+            <div class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-3">Hardware Systems &amp; Infrastructure</div>
+            <div class="flex flex-wrap justify-center gap-2">
+              <a href="https://github.com/S4AI-CornellTech/MicroGreen" target="_blank" class="group bg-white/80 hover:bg-blue-600 border border-blue-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-blue-700 group-hover:text-white">MicroGreen</span>
+                <div class="text-xs text-blue-500 group-hover:text-blue-100 leading-tight">Edge ML &amp; IoT Lifecycle</div>
+              </a>
+              <a href="https://arxiv.org/abs/2502.05043" target="_blank" class="group bg-white/80 hover:bg-blue-600 border border-blue-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-blue-700 group-hover:text-white">EcoServe</span>
+                <div class="text-xs text-blue-500 group-hover:text-blue-100 leading-tight">Inference Server Lifecycle</div>
+              </a>
+              <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2024/03/2024-GreenSKU-ISCA2024.pdf" target="_blank" class="group bg-white/80 hover:bg-blue-600 border border-blue-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-blue-700 group-hover:text-white">GreenSKU</span>
+                <div class="text-xs text-blue-500 group-hover:text-blue-100 leading-tight">Data Center Carbon</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Layer 3: Components / IC (Architecture) -->
+          <div class="w-full max-w-2xl rounded-xl px-5 py-4 text-center" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">
+            <div class="text-xs font-bold text-emerald-700 uppercase tracking-widest mb-3">Architecture &amp; Components / IC</div>
+            <div class="flex flex-wrap justify-center gap-2">
+              <a href="https://github.com/facebookresearch/ACT" target="_blank" class="group bg-white/80 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-emerald-700 group-hover:text-white">ACT</span>
+                <div class="text-xs text-emerald-600 group-hover:text-emerald-100 leading-tight">Embodied Carbon Estimation</div>
+              </a>
+              <a href="https://arxiv.org/pdf/2507.01145" target="_blank" class="group bg-white/80 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-emerald-700 group-hover:text-white">CarbonClarity</span>
+                <div class="text-xs text-emerald-600 group-hover:text-emerald-100 leading-tight">Supply Chain Uncertainty</div>
+              </a>
+              <a href="https://arxiv.org/abs/2306.09434" target="_blank" class="group bg-white/80 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-emerald-700 group-hover:text-white">ECOChip</span>
+                <div class="text-xs text-emerald-600 group-hover:text-emerald-100 leading-tight">Chiplet Carbon Modeling</div>
+              </a>
+              <a href="https://dl.acm.org/doi/10.1145/3665314.3670838" target="_blank" class="group bg-white/80 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-emerald-700 group-hover:text-white">3D-IC</span>
+                <div class="text-xs text-emerald-600 group-hover:text-emerald-100 leading-tight">3D Integration Carbon</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Layer 4: Device (bottom / widest) -->
+          <div class="w-full rounded-xl px-5 py-4 text-center" style="background:linear-gradient(135deg,#ffedd5,#fed7aa);">
+            <div class="text-xs font-bold text-orange-700 uppercase tracking-widest mb-3">Circuits &amp; Devices</div>
+            <div class="flex flex-wrap justify-center gap-2">
+              <a href="https://arxiv.org/abs/2602.05018" target="_blank" class="group bg-white/80 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-orange-700 group-hover:text-white">COFFEE</span>
+                <div class="text-xs text-orange-500 group-hover:text-orange-100 leading-tight">Circuit-level AI Hardware Modeling</div>
+              </a>
+              <a href="https://ieeexplore.ieee.org/document/11240809" target="_blank" class="group bg-white/80 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-orange-700 group-hover:text-white">EPiCarbon</span>
+                <div class="text-xs text-orange-500 group-hover:text-orange-100 leading-tight">Device-level Emission Modeling</div>
+              </a>
+              <a href="https://ecoinvent.org/" target="_blank" class="group bg-white/80 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-orange-700 group-hover:text-white">ecoinvent</span>
+                <div class="text-xs text-orange-500 group-hover:text-orange-100 leading-tight">Raw Characterization Data</div>
+              </a>
+              <a href="https://iedm23.mapyourshow.com/mys_shared/iedm23/handouts/28-1_Wed_13242.pdf" target="_blank" class="group bg-white/80 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-1.5 transition-colors">
+                <span class="text-xs font-bold text-orange-700 group-hover:text-white">Fab Sust.</span>
+                <div class="text-xs text-orange-500 group-hover:text-orange-100 leading-tight">Fabrication Sustainability</div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="text-center text-xs text-slate-400 mt-4 italic">Click any tool to view the paper. Hover to highlight.</p>
+      </div>
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
         <!-- ACT -->
@@ -311,7 +418,6 @@
         <span class="text-xs bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full font-medium">Architecture</span>
         <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Systems &amp; Cloud</span>
         <span class="text-xs bg-violet-100 text-violet-700 px-3 py-1 rounded-full font-medium">AI &amp; LLMs</span>
-        <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-medium">Industry</span>
       </div>
 
       <!-- Animated placeholder cards -->
