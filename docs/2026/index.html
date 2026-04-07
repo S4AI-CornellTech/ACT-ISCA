@@ -23,7 +23,6 @@
         <a href="#tools" class="hover:text-emerald-300">Tools</a>
         <a href="#schedule" class="hover:text-emerald-300">Schedule</a>
         <a href="#speakers" class="hover:text-emerald-300">Speakers</a>
-        <a href="#resources" class="hover:text-emerald-300">Resources</a>
         <a href="#organizers" class="hover:text-emerald-300">Organizers</a>
       </div>
       <a href="https://github.com/S4AI-CornellTech/ACT" class="text-sm text-emerald-400 hover:text-emerald-300 font-medium">GitHub &rarr;</a>
@@ -154,111 +153,431 @@
       <div class="w-16 h-1 bg-emerald-500 rounded mb-4"></div>
       <p class="text-slate-500 text-sm mb-10">A cross-stack methodology spanning recent publications at ISCA, ICCAD, and DATE.</p>
 
-      <!-- Cross-stack pyramid diagram -->
-      <div class="relative mb-16 select-none">
+      <!-- Cross-stack SVG pyramid diagram (hidden) -->
+      <div class="mb-16 hidden">
+        <svg viewBox="0 0 860 600" xmlns="http://www.w3.org/2000/svg" class="w-full rounded-2xl bg-white border border-slate-100 shadow-lg" style="max-height:700px;">
 
-        <!-- Flow arrows (left & right) -->
-        <div class="hidden lg:flex flex-col items-center justify-center absolute left-0 top-0 bottom-0 w-16 gap-2 pointer-events-none">
-          <div class="flex flex-col items-center gap-1">
-            <svg width="28" height="80" viewBox="0 0 28 80"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#10b981"/></marker></defs><line x1="14" y1="75" x2="14" y2="8" stroke="#10b981" stroke-width="2.5" marker-end="url(#ah)"/></svg>
-            <span class="text-emerald-600 font-bold text-xs tracking-wide leading-tight text-center" style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;">BOTTOM-UP MODELING FLOW</span>
-            <span class="text-emerald-500 text-center leading-tight" style="font-size:9px;writing-mode:vertical-rl;transform:rotate(180deg);">(Data from Device → Software)</span>
+          <!-- ═══ BOLD LEFT ARROW (bottom-up, green) ═══ -->
+          <polygon points="22,110 40,18 58,110" fill="#10b981"/>
+          <rect x="32" y="108" width="16" height="448" rx="3" fill="#10b981"/>
+          <text transform="rotate(-90,16,300)" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="800" fill="#059669" letter-spacing="0.8">BOTTOM-UP MODELING FLOW</text>
+          <text transform="rotate(-90,6,300)" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#6ee7b7" letter-spacing="0.3">Data from Device → Software</text>
+
+          <!-- ═══ BOLD RIGHT ARROW (top-down, gray) ═══ -->
+          <rect x="812" y="48" width="16" height="448" rx="3" fill="#94a3b8"/>
+          <polygon points="802,492 820,584 838,492" fill="#94a3b8"/>
+          <text transform="rotate(90,844,300)" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="800" fill="#64748b" letter-spacing="0.8">TOP-DOWN OPTIMIZATION FLOW</text>
+          <text transform="rotate(90,854,300)" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#94a3b8" letter-spacing="0.3">Metrics inform better design</text>
+
+          <!-- ═══ PYRAMID BANDS ═══ -->
+          <!-- Application (top triangle) -->
+          <polygon points="270,14 312,150 228,150" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- Infrastructure -->
+          <polygon points="228,152 312,152 354,290 186,290" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- Components/IC -->
+          <polygon points="186,292 354,292 396,430 144,430" fill="#d1fae5" stroke="#34d399" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- Device (bottom / widest) -->
+          <polygon points="144,432 396,432 418,580 122,580" fill="#ffedd5" stroke="#fb923c" stroke-width="1.5" stroke-linejoin="round"/>
+
+          <!-- ═══ LAYER LABELS (inside pyramid, centered) ═══ -->
+          <text x="270" y="80"  text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="bold" fill="#5b21b6">Software</text>
+          <text x="270" y="93"  text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="bold" fill="#5b21b6">Applications</text>
+          <text x="270" y="106" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="bold" fill="#5b21b6">&amp; Systems</text>
+          <text x="270" y="225" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="bold" fill="#1e3a8a">Hardware</text>
+          <text x="270" y="238" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="bold" fill="#1e3a8a">Systems</text>
+          <text x="270" y="360" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="bold" fill="#064e3b">Architecture &amp;</text>
+          <text x="270" y="373" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="bold" fill="#064e3b">Components / IC</text>
+          <text x="270" y="498" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="bold" fill="#7c2d12">Circuits &amp;</text>
+          <text x="270" y="511" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="bold" fill="#7c2d12">Devices</text>
+
+          <!-- ═══ ICONS inside pyramid layers ═══ -->
+
+          <!-- App icon: two people / network nodes -->
+          <circle cx="254" cy="130" r="6" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.7"/>
+          <circle cx="286" cy="130" r="6" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.7"/>
+          <line x1="260" y1="130" x2="280" y2="130" stroke="#7c3aed" stroke-width="1.5" opacity="0.7"/>
+          <path d="M244,142 Q254,136 254,136" stroke="#7c3aed" stroke-width="1.3" fill="none" opacity="0.6"/>
+          <path d="M286,136 Q296,136 296,142" stroke="#7c3aed" stroke-width="1.3" fill="none" opacity="0.6"/>
+
+          <!-- Infra icon: server rack (3 stacked bars) -->
+          <rect x="252" y="272" width="36" height="6" rx="1.5" fill="none" stroke="#1d4ed8" stroke-width="1.4" opacity="0.7"/>
+          <rect x="252" y="280" width="36" height="6" rx="1.5" fill="none" stroke="#1d4ed8" stroke-width="1.4" opacity="0.7"/>
+          <rect x="252" y="288" width="36" height="6" rx="1.5" fill="none" stroke="#1d4ed8" stroke-width="1.4" opacity="0.7"/>
+          <circle cx="281" cy="275" r="1.5" fill="#1d4ed8" opacity="0.7"/>
+          <circle cx="281" cy="283" r="1.5" fill="#1d4ed8" opacity="0.7"/>
+          <circle cx="281" cy="291" r="1.5" fill="#1d4ed8" opacity="0.7"/>
+
+          <!-- Arch icon: CPU chip -->
+          <rect x="256" y="410" width="28" height="28" rx="2" fill="none" stroke="#065f46" stroke-width="1.5" opacity="0.75"/>
+          <rect x="261" y="415" width="18" height="18" rx="1" fill="#065f46" opacity="0.15"/>
+          <line x1="262" y1="410" x2="262" y2="406" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+          <line x1="270" y1="410" x2="270" y2="406" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+          <line x1="278" y1="410" x2="278" y2="406" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+          <line x1="262" y1="438" x2="262" y2="434" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+          <line x1="270" y1="438" x2="270" y2="434" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+          <line x1="278" y1="438" x2="278" y2="434" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+          <line x1="256" y1="416" x2="252" y2="416" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+          <line x1="256" y1="424" x2="252" y2="424" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+          <line x1="284" y1="416" x2="288" y2="416" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+          <line x1="284" y1="424" x2="288" y2="424" stroke="#065f46" stroke-width="1.2" opacity="0.7"/>
+
+          <!-- Device icon: logic gate + waveform -->
+          <line x1="248" y1="562" x2="262" y2="562" stroke="#9a3412" stroke-width="1.5" opacity="0.7"/>
+          <line x1="248" y1="556" x2="248" y2="568" stroke="#9a3412" stroke-width="1.5" opacity="0.7"/>
+          <path d="M262,555 Q274,555 274,562 Q274,569 262,569 Z" fill="none" stroke="#9a3412" stroke-width="1.5" opacity="0.7"/>
+          <line x1="274" y1="562" x2="282" y2="562" stroke="#9a3412" stroke-width="1.5" opacity="0.7"/>
+          <!-- waveform right -->
+          <polyline points="286,566 290,558 294,566 298,558 302,566" fill="none" stroke="#9a3412" stroke-width="1.3" opacity="0.6"/>
+
+          <!-- ═══ CONNECTOR LINES ═══ -->
+          <!-- App -->
+          <line x1="313" y1="55"  x2="448" y2="55"  stroke="#8b5cf6" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <line x1="318" y1="98"  x2="448" y2="98"  stroke="#8b5cf6" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <!-- Infra -->
+          <line x1="340" y1="172" x2="448" y2="172" stroke="#60a5fa" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <line x1="348" y1="212" x2="448" y2="212" stroke="#60a5fa" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <line x1="355" y1="252" x2="448" y2="252" stroke="#60a5fa" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <!-- Comp -->
+          <line x1="366" y1="310" x2="448" y2="310" stroke="#34d399" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <line x1="374" y1="348" x2="448" y2="348" stroke="#34d399" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <line x1="381" y1="386" x2="448" y2="386" stroke="#34d399" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <line x1="389" y1="420" x2="448" y2="420" stroke="#34d399" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <!-- Device -->
+          <line x1="400" y1="454" x2="448" y2="454" stroke="#fb923c" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <line x1="405" y1="490" x2="448" y2="490" stroke="#fb923c" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <line x1="410" y1="526" x2="448" y2="526" stroke="#fb923c" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+          <line x1="415" y1="560" x2="448" y2="560" stroke="#fb923c" stroke-dasharray="5,3" stroke-width="1.4" opacity="0.65"/>
+
+          <!-- ═══ TOOL CARDS ═══ -->
+
+          <!-- APPLICATION -->
+          <a href="https://dl.acm.org/doi/10.1145/3695053.3731023" target="_blank">
+            <rect x="450" y="40"  width="172" height="30" rx="5" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.5"/>
+            <text x="461" y="54"  font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#6d28d9">FAIR-CO₂</text>
+            <text x="461" y="66"  font-family="Inter,sans-serif" font-size="8"  fill="#7c3aed">Software Carbon Attribution</text>
+          </a>
+          <a href="https://arxiv.org/abs/2309.14393" target="_blank">
+            <rect x="450" y="83"  width="172" height="30" rx="5" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.5"/>
+            <text x="461" y="97"  font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#6d28d9">LLM Carbon</text>
+            <text x="461" y="109" font-family="Inter,sans-serif" font-size="8"  fill="#7c3aed">LLM Lifecycle Carbon</text>
+          </a>
+
+          <!-- INFRASTRUCTURE -->
+          <a href="https://github.com/S4AI-CornellTech/MicroGreen" target="_blank">
+            <rect x="450" y="157" width="172" height="30" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+            <text x="461" y="171" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#1d4ed8">MicroGreen</text>
+            <text x="461" y="183" font-family="Inter,sans-serif" font-size="8"  fill="#3b82f6">Edge ML &amp; IoT Lifecycle</text>
+          </a>
+          <a href="https://arxiv.org/abs/2502.05043" target="_blank">
+            <rect x="450" y="197" width="172" height="30" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+            <text x="461" y="211" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#1d4ed8">EcoServe</text>
+            <text x="461" y="223" font-family="Inter,sans-serif" font-size="8"  fill="#3b82f6">Inference Server Lifecycle</text>
+          </a>
+          <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2024/03/2024-GreenSKU-ISCA2024.pdf" target="_blank">
+            <rect x="450" y="237" width="172" height="30" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+            <text x="461" y="251" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#1d4ed8">GreenSKU</text>
+            <text x="461" y="263" font-family="Inter,sans-serif" font-size="8"  fill="#3b82f6">Data Center Carbon</text>
+          </a>
+
+          <!-- COMPONENTS / IC -->
+          <a href="https://github.com/facebookresearch/ACT" target="_blank">
+            <rect x="450" y="295" width="172" height="30" rx="5" fill="#f0fdf4" stroke="#34d399" stroke-width="1.5"/>
+            <text x="461" y="309" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#065f46">ACT</text>
+            <text x="461" y="321" font-family="Inter,sans-serif" font-size="8"  fill="#059669">Embodied Carbon Estimation</text>
+          </a>
+          <a href="https://arxiv.org/pdf/2507.01145" target="_blank">
+            <rect x="450" y="333" width="172" height="30" rx="5" fill="#f0fdf4" stroke="#34d399" stroke-width="1.5"/>
+            <text x="461" y="347" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#065f46">CarbonClarity</text>
+            <text x="461" y="359" font-family="Inter,sans-serif" font-size="8"  fill="#059669">Supply Chain Uncertainty</text>
+          </a>
+          <a href="https://arxiv.org/abs/2306.09434" target="_blank">
+            <rect x="450" y="371" width="172" height="30" rx="5" fill="#f0fdf4" stroke="#34d399" stroke-width="1.5"/>
+            <text x="461" y="385" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#065f46">ECOChip</text>
+            <text x="461" y="397" font-family="Inter,sans-serif" font-size="8"  fill="#059669">Chiplet Carbon Modeling</text>
+          </a>
+          <a href="https://dl.acm.org/doi/10.1145/3665314.3670838" target="_blank">
+            <rect x="450" y="407" width="172" height="30" rx="5" fill="#f0fdf4" stroke="#34d399" stroke-width="1.5"/>
+            <text x="461" y="421" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#065f46">3D-IC</text>
+            <text x="461" y="433" font-family="Inter,sans-serif" font-size="8"  fill="#059669">3D Integration Carbon</text>
+          </a>
+
+          <!-- DEVICE -->
+          <a href="https://arxiv.org/abs/2602.05018" target="_blank">
+            <rect x="450" y="439" width="172" height="30" rx="5" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+            <text x="461" y="453" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#9a3412">COFFEE</text>
+            <text x="461" y="465" font-family="Inter,sans-serif" font-size="8"  fill="#ea580c">Circuit-level AI Hardware</text>
+          </a>
+          <a href="https://ieeexplore.ieee.org/document/11240809" target="_blank">
+            <rect x="450" y="475" width="172" height="30" rx="5" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+            <text x="461" y="489" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#9a3412">EPiCarbon</text>
+            <text x="461" y="501" font-family="Inter,sans-serif" font-size="8"  fill="#ea580c">Device-level Emissions</text>
+          </a>
+          <a href="https://ecoinvent.org/" target="_blank">
+            <rect x="450" y="511" width="172" height="30" rx="5" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+            <text x="461" y="525" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#9a3412">ecoinvent</text>
+            <text x="461" y="537" font-family="Inter,sans-serif" font-size="8"  fill="#ea580c">Raw Characterization Data</text>
+          </a>
+          <a href="https://iedm23.mapyourshow.com/mys_shared/iedm23/handouts/28-1_Wed_13242.pdf" target="_blank">
+            <rect x="450" y="545" width="172" height="30" rx="5" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+            <text x="461" y="559" font-family="Inter,sans-serif" font-size="10" font-weight="bold" fill="#9a3412">Fab Sust.</text>
+            <text x="461" y="571" font-family="Inter,sans-serif" font-size="8"  fill="#ea580c">Fabrication Sustainability</text>
+          </a>
+
+        </svg>
+        <p class="text-center text-xs text-slate-400 mt-3 italic">Click any tool to view the paper.</p>
+      </div>
+
+      <!-- Cross-stack stacked pyramid diagram -->
+      <div class="mb-16 relative">
+
+        <!-- Left arrow: bottom-up (blue, upward, full height) -->
+        <div class="hidden lg:flex flex-row items-center absolute pointer-events-none z-10" style="left:0;top:0;bottom:0;width:72px;">
+          <!-- Big SVG arrow spanning full height -->
+          <svg width="36" height="100%" viewBox="0 0 36 500" preserveAspectRatio="none" style="height:100%;min-height:400px;">
+            <!-- Shaft -->
+            <rect x="11" y="60" width="14" height="420" fill="#3b82f6" rx="3"/>
+            <!-- Arrowhead pointing up -->
+            <polygon points="18,4 36,62 0,62" fill="#3b82f6"/>
+          </svg>
+          <!-- Vertical text: two parallel columns, subtitle on right (inner side) -->
+          <div class="flex flex-row items-center justify-center ml-1" style="height:100%;gap:4px;">
+            <span class="font-extrabold text-blue-600" style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:18px;letter-spacing:0.08em;line-height:1;">BOTTOM-UP MODELING FLOW</span>
+            <span class="text-blue-400" style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;line-height:1;">(Data from Device &rarr; Software)</span>
           </div>
         </div>
-        <div class="hidden lg:flex flex-col items-center justify-center absolute right-0 top-0 bottom-0 w-16 gap-2 pointer-events-none">
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-slate-500 font-bold text-xs tracking-wide leading-tight text-center" style="writing-mode:vertical-rl;font-size:10px;">TOP-DOWN OPTIMIZATION FLOW</span>
-            <span class="text-slate-400 text-center leading-tight" style="font-size:9px;writing-mode:vertical-rl;">(Metrics inform better design)</span>
-            <svg width="28" height="80" viewBox="0 0 28 80"><defs><marker id="ah2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#94a3b8"/></marker></defs><line x1="14" y1="5" x2="14" y2="72" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#ah2)"/></svg>
+
+        <!-- Right arrow: top-down (green, downward, full height) -->
+        <div class="hidden lg:flex flex-row-reverse items-center absolute pointer-events-none z-10" style="right:0;top:0;bottom:0;width:72px;">
+          <!-- Big SVG arrow spanning full height -->
+          <svg width="36" height="100%" viewBox="0 0 36 500" preserveAspectRatio="none" style="height:100%;min-height:400px;">
+            <!-- Shaft -->
+            <rect x="11" y="20" width="14" height="420" fill="#10b981" rx="3"/>
+            <!-- Arrowhead pointing down -->
+            <polygon points="18,496 36,438 0,438" fill="#10b981"/>
+          </svg>
+          <!-- Vertical text: two parallel columns, subtitle on left (inner side) -->
+          <div class="flex flex-row items-center justify-center mr-1" style="height:100%;gap:4px;">
+            <span class="text-emerald-400" style="writing-mode:vertical-rl;font-size:13px;line-height:1;">(Metrics inform better design)</span>
+            <span class="font-extrabold text-emerald-600" style="writing-mode:vertical-rl;font-size:18px;letter-spacing:0.08em;line-height:1;">TOP-DOWN OPTIMIZATION FLOW</span>
           </div>
         </div>
 
-        <!-- Pyramid layers (bottom = widest, top = narrowest) -->
-        <div class="flex flex-col items-center gap-1 lg:px-20">
+        <div class="flex flex-col items-center gap-3 lg:px-24">
 
-          <!-- Layer 1: Application (top / narrowest) -->
-          <div class="w-full max-w-sm rounded-xl px-5 py-4 text-center" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">
-            <div class="text-xs font-bold text-violet-700 uppercase tracking-widest mb-3">Software Applications &amp; Systems</div>
+          <!-- Application (narrowest) -->
+          <div class="w-full rounded-2xl border-2 border-violet-300 px-6 py-5 text-center" style="max-width:44%;background:linear-gradient(135deg,#f5f3ff,#ede9fe);">
+            <div class="text-xs font-extrabold text-violet-700 uppercase tracking-widest mb-4">Software Applications &amp; Systems</div>
             <div class="flex flex-wrap justify-center gap-2">
-              <a href="https://dl.acm.org/doi/10.1145/3695053.3731023" target="_blank" class="group bg-white/80 hover:bg-violet-600 border border-violet-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-violet-700 group-hover:text-white">FAIR-CO&#8322;</span>
-                <div class="text-xs text-violet-500 group-hover:text-violet-100 leading-tight">Software-level Carbon Attribution</div>
-              </a>
-              <a href="https://arxiv.org/abs/2309.14393" target="_blank" class="group bg-white/80 hover:bg-violet-600 border border-violet-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-violet-700 group-hover:text-white">LLM Carbon</span>
-                <div class="text-xs text-violet-500 group-hover:text-violet-100 leading-tight">LLM Lifecycle Carbon</div>
+              <a href="https://dl.acm.org/doi/10.1145/3695053.3731023" target="_blank" class="group bg-white hover:bg-violet-600 border border-violet-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
+                <div class="text-xs font-bold text-violet-700 group-hover:text-white">FAIR-CO&#8322;</div>
+                <div class="text-xs text-violet-400 group-hover:text-violet-200 leading-tight mt-0.5">Software Carbon Attribution</div>
               </a>
             </div>
           </div>
 
-          <!-- Layer 2: Infrastructure + Platform -->
-          <div class="w-full max-w-xl rounded-xl px-5 py-4 text-center" style="background:linear-gradient(135deg,#e0f2fe,#bae6fd);">
-            <div class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-3">Hardware Systems &amp; Infrastructure</div>
+          <!-- Infrastructure -->
+          <div class="w-full rounded-2xl border-2 border-blue-300 px-6 py-5 text-center" style="max-width:66%;background:linear-gradient(135deg,#eff6ff,#dbeafe);">
+            <div class="text-xs font-extrabold text-blue-700 uppercase tracking-widest mb-4">Hardware Systems &amp; Infrastructure</div>
             <div class="flex flex-wrap justify-center gap-2">
-              <a href="https://github.com/S4AI-CornellTech/MicroGreen" target="_blank" class="group bg-white/80 hover:bg-blue-600 border border-blue-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-blue-700 group-hover:text-white">MicroGreen</span>
-                <div class="text-xs text-blue-500 group-hover:text-blue-100 leading-tight">Edge ML &amp; IoT Lifecycle</div>
+              <a href="https://github.com/S4AI-CornellTech/MicroGreen" target="_blank" class="group bg-white hover:bg-blue-600 border border-blue-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
+                <div class="text-xs font-bold text-blue-700 group-hover:text-white">MicroGreen</div>
+                <div class="text-xs text-blue-400 group-hover:text-blue-200 leading-tight mt-0.5">Edge ML &amp; IoT Lifecycle</div>
               </a>
-              <a href="https://arxiv.org/abs/2502.05043" target="_blank" class="group bg-white/80 hover:bg-blue-600 border border-blue-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-blue-700 group-hover:text-white">EcoServe</span>
-                <div class="text-xs text-blue-500 group-hover:text-blue-100 leading-tight">Inference Server Lifecycle</div>
-              </a>
-              <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2024/03/2024-GreenSKU-ISCA2024.pdf" target="_blank" class="group bg-white/80 hover:bg-blue-600 border border-blue-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-blue-700 group-hover:text-white">GreenSKU</span>
-                <div class="text-xs text-blue-500 group-hover:text-blue-100 leading-tight">Data Center Carbon</div>
+              <a href="https://arxiv.org/abs/2502.05043" target="_blank" class="group bg-white hover:bg-blue-600 border border-blue-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
+                <div class="text-xs font-bold text-blue-700 group-hover:text-white">EcoServe</div>
+                <div class="text-xs text-blue-400 group-hover:text-blue-200 leading-tight mt-0.5">Inference Server Lifecycle</div>
               </a>
             </div>
           </div>
 
-          <!-- Layer 3: Components / IC (Architecture) -->
-          <div class="w-full max-w-2xl rounded-xl px-5 py-4 text-center" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">
-            <div class="text-xs font-bold text-emerald-700 uppercase tracking-widest mb-3">Architecture &amp; Components / IC</div>
+          <!-- Components / IC -->
+          <div class="w-full rounded-2xl border-2 border-emerald-300 px-6 py-5 text-center" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);">
+            <div class="text-xs font-extrabold text-emerald-700 uppercase tracking-widest mb-4">Architecture &amp; Components / IC</div>
             <div class="flex flex-wrap justify-center gap-2">
-              <a href="https://github.com/facebookresearch/ACT" target="_blank" class="group bg-white/80 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-emerald-700 group-hover:text-white">ACT</span>
-                <div class="text-xs text-emerald-600 group-hover:text-emerald-100 leading-tight">Embodied Carbon Estimation</div>
+              <a href="https://github.com/facebookresearch/ACT" target="_blank" class="group bg-white hover:bg-emerald-600 border border-emerald-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
+                <div class="text-xs font-bold text-emerald-700 group-hover:text-white">ACT</div>
+                <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight mt-0.5">Embodied Carbon Estimation</div>
               </a>
-              <a href="https://arxiv.org/pdf/2507.01145" target="_blank" class="group bg-white/80 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-emerald-700 group-hover:text-white">CarbonClarity</span>
-                <div class="text-xs text-emerald-600 group-hover:text-emerald-100 leading-tight">Supply Chain Uncertainty</div>
+              <a href="https://arxiv.org/pdf/2507.01145" target="_blank" class="group bg-white hover:bg-emerald-600 border border-emerald-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
+                <div class="text-xs font-bold text-emerald-700 group-hover:text-white">CarbonClarity</div>
+                <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight mt-0.5">Supply Chain Uncertainty</div>
               </a>
-              <a href="https://arxiv.org/abs/2306.09434" target="_blank" class="group bg-white/80 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-emerald-700 group-hover:text-white">ECOChip</span>
-                <div class="text-xs text-emerald-600 group-hover:text-emerald-100 leading-tight">Chiplet Carbon Modeling</div>
-              </a>
-              <a href="https://dl.acm.org/doi/10.1145/3665314.3670838" target="_blank" class="group bg-white/80 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-emerald-700 group-hover:text-white">3D-IC</span>
-                <div class="text-xs text-emerald-600 group-hover:text-emerald-100 leading-tight">3D Integration Carbon</div>
+              <a href="https://dl.acm.org/doi/10.1145/3665314.3670838" target="_blank" class="group bg-white hover:bg-emerald-600 border border-emerald-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
+                <div class="text-xs font-bold text-emerald-700 group-hover:text-white">3D-IC</div>
+                <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight mt-0.5">3D Integration Carbon</div>
               </a>
             </div>
           </div>
 
-          <!-- Layer 4: Device (bottom / widest) -->
-          <div class="w-full rounded-xl px-5 py-4 text-center" style="background:linear-gradient(135deg,#ffedd5,#fed7aa);">
-            <div class="text-xs font-bold text-orange-700 uppercase tracking-widest mb-3">Circuits &amp; Devices</div>
+          <!-- Circuits & Devices (widest) -->
+          <div class="w-full rounded-2xl border-2 border-orange-300 px-6 py-5 text-center" style="background:linear-gradient(135deg,#fff7ed,#ffedd5);">
+            <div class="text-xs font-extrabold text-orange-700 uppercase tracking-widest mb-4">Circuits &amp; Devices</div>
             <div class="flex flex-wrap justify-center gap-2">
-              <a href="https://arxiv.org/abs/2602.05018" target="_blank" class="group bg-white/80 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-orange-700 group-hover:text-white">COFFEE</span>
-                <div class="text-xs text-orange-500 group-hover:text-orange-100 leading-tight">Circuit-level AI Hardware Modeling</div>
+              <a href="https://arxiv.org/abs/2602.05018" target="_blank" class="group bg-white hover:bg-orange-500 border border-orange-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
+                <div class="text-xs font-bold text-orange-700 group-hover:text-white">COFFEE</div>
+                <div class="text-xs text-orange-400 group-hover:text-orange-200 leading-tight mt-0.5">Circuit-level AI Hardware</div>
               </a>
-              <a href="https://ieeexplore.ieee.org/document/11240809" target="_blank" class="group bg-white/80 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-orange-700 group-hover:text-white">EPiCarbon</span>
-                <div class="text-xs text-orange-500 group-hover:text-orange-100 leading-tight">Device-level Emission Modeling</div>
+              <a href="https://ieeexplore.ieee.org/document/11240809" target="_blank" class="group bg-white hover:bg-orange-500 border border-orange-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
+                <div class="text-xs font-bold text-orange-700 group-hover:text-white">EPiCarbon</div>
+                <div class="text-xs text-orange-400 group-hover:text-orange-200 leading-tight mt-0.5">Device-level Emissions</div>
               </a>
-              <a href="https://ecoinvent.org/" target="_blank" class="group bg-white/80 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-orange-700 group-hover:text-white">ecoinvent</span>
-                <div class="text-xs text-orange-500 group-hover:text-orange-100 leading-tight">Raw Characterization Data</div>
-              </a>
-              <a href="https://iedm23.mapyourshow.com/mys_shared/iedm23/handouts/28-1_Wed_13242.pdf" target="_blank" class="group bg-white/80 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-1.5 transition-colors">
-                <span class="text-xs font-bold text-orange-700 group-hover:text-white">Fab Sust.</span>
-                <div class="text-xs text-orange-500 group-hover:text-orange-100 leading-tight">Fabrication Sustainability</div>
+              <a href="https://ecoinvent.org/" target="_blank" class="group bg-white hover:bg-orange-500 border border-orange-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
+                <div class="text-xs font-bold text-orange-700 group-hover:text-white">ecoinvent</div>
+                <div class="text-xs text-orange-400 group-hover:text-orange-200 leading-tight mt-0.5">Raw Characterization Data</div>
               </a>
             </div>
           </div>
 
         </div>
-
         <p class="text-center text-xs text-slate-400 mt-4 italic">Click any tool to view the paper. Hover to highlight.</p>
+      </div>
+
+      <!-- Old option-10 callout grid (hidden) -->
+      <div class="mb-16 hidden">
+        <div class="grid gap-0" style="grid-template-columns:1fr 180px 1fr;">
+
+          <!-- ── LEFT CALLOUTS ── -->
+          <div class="flex flex-col">
+
+            <!-- Application row -->
+            <div class="flex items-center justify-end" style="min-height:110px;">
+              <a href="https://dl.acm.org/doi/10.1145/3695053.3731023" target="_blank" class="group bg-violet-50 hover:bg-violet-600 border border-violet-300 rounded-lg px-3 py-2 transition-all shadow-sm text-right mr-0">
+                <div class="text-xs font-bold text-violet-700 group-hover:text-white">FAIR-CO&#8322;</div>
+                <div class="text-xs text-violet-400 group-hover:text-violet-200 leading-tight">Software Carbon Attribution</div>
+              </a>
+              <div class="border-t-2 border-dashed border-violet-300 w-4"></div>
+            </div>
+
+            <!-- Infrastructure row -->
+            <div class="flex items-center justify-end" style="min-height:110px;">
+              <div class="flex flex-col gap-1.5 items-end">
+                <a href="https://github.com/S4AI-CornellTech/MicroGreen" target="_blank" class="group bg-blue-50 hover:bg-blue-600 border border-blue-300 rounded-lg px-3 py-2 transition-all shadow-sm text-right">
+                  <div class="text-xs font-bold text-blue-700 group-hover:text-white">MicroGreen</div>
+                  <div class="text-xs text-blue-400 group-hover:text-blue-200 leading-tight">Edge ML &amp; IoT Lifecycle</div>
+                </a>
+                <a href="https://arxiv.org/abs/2502.05043" target="_blank" class="group bg-blue-50 hover:bg-blue-600 border border-blue-300 rounded-lg px-3 py-2 transition-all shadow-sm text-right">
+                  <div class="text-xs font-bold text-blue-700 group-hover:text-white">EcoServe</div>
+                  <div class="text-xs text-blue-400 group-hover:text-blue-200 leading-tight">Inference Server Lifecycle</div>
+                </a>
+              </div>
+              <div class="border-t-2 border-dashed border-blue-300 w-4"></div>
+            </div>
+
+            <!-- Components / IC row -->
+            <div class="flex items-center justify-end" style="min-height:110px;">
+              <div class="flex flex-col gap-1.5 items-end">
+                <a href="https://github.com/facebookresearch/ACT" target="_blank" class="group bg-emerald-50 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-2 transition-all shadow-sm text-right">
+                  <div class="text-xs font-bold text-emerald-700 group-hover:text-white">ACT</div>
+                  <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight">Embodied Carbon Estimation</div>
+                </a>
+                <a href="https://arxiv.org/abs/2306.09434" target="_blank" class="group bg-emerald-50 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-2 transition-all shadow-sm text-right">
+                  <div class="text-xs font-bold text-emerald-700 group-hover:text-white">ECOChip</div>
+                  <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight">Chiplet Carbon Modeling</div>
+                </a>
+              </div>
+              <div class="border-t-2 border-dashed border-emerald-300 w-4"></div>
+            </div>
+
+            <!-- Device row -->
+            <div class="flex items-center justify-end" style="min-height:110px;">
+              <div class="flex flex-col gap-1.5 items-end">
+                <a href="https://arxiv.org/abs/2602.05018" target="_blank" class="group bg-orange-50 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-2 transition-all shadow-sm text-right">
+                  <div class="text-xs font-bold text-orange-700 group-hover:text-white">COFFEE</div>
+                  <div class="text-xs text-orange-400 group-hover:text-orange-200 leading-tight">Circuit-level AI Hardware</div>
+                </a>
+                <a href="https://ecoinvent.org/" target="_blank" class="group bg-orange-50 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-2 transition-all shadow-sm text-right">
+                  <div class="text-xs font-bold text-orange-700 group-hover:text-white">ecoinvent</div>
+                  <div class="text-xs text-orange-400 group-hover:text-orange-200 leading-tight">Raw Characterization Data</div>
+                </a>
+              </div>
+              <div class="border-t-2 border-dashed border-orange-300 w-4"></div>
+            </div>
+
+          </div>
+          <!-- end left -->
+
+          <!-- ── CENTER PYRAMID ── -->
+          <div class="flex flex-col rounded-2xl overflow-hidden shadow-md border border-slate-200">
+
+            <!-- Application band -->
+            <div class="flex items-center justify-center text-center px-2 font-bold text-violet-800 text-xs uppercase tracking-wide" style="min-height:110px;background:linear-gradient(180deg,#ede9fe,#ddd6fe);">
+              Software<br>Applications<br>&amp; Systems
+            </div>
+
+            <!-- Infrastructure band -->
+            <div class="flex items-center justify-center text-center px-2 font-bold text-blue-800 text-xs uppercase tracking-wide border-t-2 border-white" style="min-height:110px;background:linear-gradient(180deg,#dbeafe,#bfdbfe);">
+              Hardware<br>Systems &amp;<br>Infrastructure
+            </div>
+
+            <!-- Components / IC band -->
+            <div class="flex items-center justify-center text-center px-2 font-bold text-emerald-800 text-xs uppercase tracking-wide border-t-2 border-white" style="min-height:110px;background:linear-gradient(180deg,#bbf7d0,#86efac);">
+              Architecture &amp;<br>Components / IC
+            </div>
+
+            <!-- Device band -->
+            <div class="flex items-center justify-center text-center px-2 font-bold text-orange-800 text-xs uppercase tracking-wide border-t-2 border-white" style="min-height:110px;background:linear-gradient(180deg,#fed7aa,#fdba74);">
+              Circuits &amp;<br>Devices
+            </div>
+
+          </div>
+          <!-- end center -->
+
+          <!-- ── RIGHT CALLOUTS ── -->
+          <div class="flex flex-col">
+
+            <!-- Application row -->
+            <div class="flex items-center" style="min-height:110px;">
+              <div class="border-t-2 border-dashed border-violet-300 w-4"></div>
+              <a href="https://arxiv.org/abs/2309.14393" target="_blank" class="group bg-violet-50 hover:bg-violet-600 border border-violet-300 rounded-lg px-3 py-2 transition-all shadow-sm">
+                <div class="text-xs font-bold text-violet-700 group-hover:text-white">LLM Carbon</div>
+                <div class="text-xs text-violet-400 group-hover:text-violet-200 leading-tight">LLM Lifecycle Carbon</div>
+              </a>
+            </div>
+
+            <!-- Infrastructure row -->
+            <div class="flex items-center" style="min-height:110px;">
+              <div class="border-t-2 border-dashed border-blue-300 w-4"></div>
+              <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2024/03/2024-GreenSKU-ISCA2024.pdf" target="_blank" class="group bg-blue-50 hover:bg-blue-600 border border-blue-300 rounded-lg px-3 py-2 transition-all shadow-sm">
+                <div class="text-xs font-bold text-blue-700 group-hover:text-white">GreenSKU</div>
+                <div class="text-xs text-blue-400 group-hover:text-blue-200 leading-tight">Data Center Carbon</div>
+              </a>
+            </div>
+
+            <!-- Components / IC row -->
+            <div class="flex items-center" style="min-height:110px;">
+              <div class="border-t-2 border-dashed border-emerald-300 w-4"></div>
+              <div class="flex flex-col gap-1.5">
+                <a href="https://arxiv.org/pdf/2507.01145" target="_blank" class="group bg-emerald-50 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-2 transition-all shadow-sm">
+                  <div class="text-xs font-bold text-emerald-700 group-hover:text-white">CarbonClarity</div>
+                  <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight">Supply Chain Uncertainty</div>
+                </a>
+                <a href="https://dl.acm.org/doi/10.1145/3665314.3670838" target="_blank" class="group bg-emerald-50 hover:bg-emerald-600 border border-emerald-300 rounded-lg px-3 py-2 transition-all shadow-sm">
+                  <div class="text-xs font-bold text-emerald-700 group-hover:text-white">3D-IC</div>
+                  <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight">3D Integration Carbon</div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Device row -->
+            <div class="flex items-center" style="min-height:110px;">
+              <div class="border-t-2 border-dashed border-orange-300 w-4"></div>
+              <div class="flex flex-col gap-1.5">
+                <a href="https://ieeexplore.ieee.org/document/11240809" target="_blank" class="group bg-orange-50 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-2 transition-all shadow-sm">
+                  <div class="text-xs font-bold text-orange-700 group-hover:text-white">EPiCarbon</div>
+                  <div class="text-xs text-orange-400 group-hover:text-orange-200 leading-tight">Device-level Emissions</div>
+                </a>
+                <a href="https://iedm23.mapyourshow.com/mys_shared/iedm23/handouts/28-1_Wed_13242.pdf" target="_blank" class="group bg-orange-50 hover:bg-orange-500 border border-orange-300 rounded-lg px-3 py-2 transition-all shadow-sm">
+                  <div class="text-xs font-bold text-orange-700 group-hover:text-white">Fab Sust.</div>
+                  <div class="text-xs text-orange-400 group-hover:text-orange-200 leading-tight">Fabrication Sustainability</div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <!-- end right -->
+
+        </div>
+
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -649,15 +968,15 @@
     </div>
   </section>
 
-  <!-- Resources -->
-  <section id="resources" class="py-20 bg-slate-50">
+  <!-- Resources (hidden) -->
+  <section id="resources" class="py-20 bg-slate-50 hidden">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold mb-2 text-emerald-900">Resources</h2>
       <div class="w-16 h-1 bg-emerald-500 rounded mb-4"></div>
       <p class="text-slate-600 text-sm mb-10">Carbon accounting tools and data sources across the full computing stack — from devices to applications.</p>
 
       <!-- Gantt-style layer coverage chart -->
-      <div class="border-2 border-slate-300 rounded-2xl p-5 bg-white">
+      <div class="border-2 border-slate-300 rounded-2xl p-5 bg-white hidden">
         <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Tool Coverage Across Computing Stack Layers</p>
         <p class="text-xs text-slate-400 mb-4">Wider bars indicate a tool spans multiple layers. Sorted by leftmost layer.</p>
 
@@ -919,7 +1238,7 @@
   <footer class="bg-slate-100 border-t border-slate-200 py-8 px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
       <div>
-        &copy; 2026 ACT Tutorial &middot; Cornell Tech
+        &copy; 2026 ACT Tutorial &middot; Cornell Tech &middot; Website by Shixue Bai 
       </div>
       <a href="../" class="text-emerald-600 hover:underline">&larr; Back to all years</a>
     </div>
