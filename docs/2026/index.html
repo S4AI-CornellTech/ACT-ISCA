@@ -26,9 +26,31 @@
         <a href="#speakers" class="hover:text-emerald-300">Speakers</a>
         <a href="#organizers" class="hover:text-emerald-300">Organizers</a>
       </div>
-      <a href="https://github.com/S4AI-CornellTech/ACT" class="text-sm text-emerald-400 hover:text-emerald-300 font-medium">GitHub &rarr;</a>
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/S4AI-CornellTech/ACT" class="text-sm text-emerald-400 hover:text-emerald-300 font-medium">GitHub &rarr;</a>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-1" aria-label="Open menu">
+          <span class="block w-5 h-0.5 bg-white"></span>
+          <span class="block w-5 h-0.5 bg-white"></span>
+          <span class="block w-5 h-0.5 bg-white"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-emerald-900 px-4 pb-4 flex flex-col gap-3 text-sm font-medium">
+      <a href="#about" class="hover:text-emerald-300 py-1 border-b border-emerald-800">About</a>
+      <a href="#tools" class="hover:text-emerald-300 py-1 border-b border-emerald-800">Tools</a>
+      <a href="#schedule" class="hover:text-emerald-300 py-1 border-b border-emerald-800">Schedule</a>
+      <a href="#speakers" class="hover:text-emerald-300 py-1 border-b border-emerald-800">Speakers</a>
+      <a href="#organizers" class="hover:text-emerald-300 py-1">Organizers</a>
     </div>
   </nav>
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+    );
+  </script>
 
   <!-- Hero -->
   <header class="bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-800 text-white py-24">
