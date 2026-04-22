@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACT Tutorial 2026 – Full-Stack Carbon Accounting for AI Systems</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -325,96 +326,82 @@
       <!-- Cross-stack stacked pyramid diagram -->
       <div class="mb-16 relative">
 
-        <!-- Left arrow: bottom-up (blue, upward, full height) -->
-        <div class="hidden lg:flex flex-row items-center absolute pointer-events-none z-10" style="left:0;top:0;bottom:0;width:72px;">
-          <!-- Big SVG arrow spanning full height -->
-          <svg width="36" height="100%" viewBox="0 0 36 500" preserveAspectRatio="none" style="height:100%;min-height:400px;">
-            <!-- Shaft -->
-            <rect x="11" y="60" width="14" height="420" fill="#3b82f6" rx="3"/>
-            <!-- Arrowhead pointing up -->
-            <polygon points="18,4 36,62 0,62" fill="#3b82f6"/>
-          </svg>
-          <!-- Vertical text: two parallel columns, subtitle on right (inner side) -->
-          <div class="flex flex-row items-center justify-center ml-1" style="height:100%;gap:4px;">
-            <span class="font-extrabold text-blue-600" style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:18px;letter-spacing:0.08em;line-height:1;">BOTTOM-UP MODELING FLOW</span>
-            <span class="text-blue-400" style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;line-height:1;">(Data from Device &rarr; Software)</span>
-          </div>
+        <!-- Left side: bottom-up image -->
+        <div class="hidden lg:block absolute pointer-events-none" style="left:-180px;top:50%;transform:translateY(-50%);width:480px;z-index:0;">
+          <img src="imgs/bottom-up.png" alt="Bottom-up modeling flow" style="width:960px;height:960px;object-fit:contain;">
         </div>
 
-        <!-- Right arrow: top-down (green, downward, full height) -->
-        <div class="hidden lg:flex flex-row-reverse items-center absolute pointer-events-none z-10" style="right:0;top:0;bottom:0;width:72px;">
-          <!-- Big SVG arrow spanning full height -->
-          <svg width="36" height="100%" viewBox="0 0 36 500" preserveAspectRatio="none" style="height:100%;min-height:400px;">
-            <!-- Shaft -->
-            <rect x="11" y="20" width="14" height="420" fill="#10b981" rx="3"/>
-            <!-- Arrowhead pointing down -->
-            <polygon points="18,496 36,438 0,438" fill="#10b981"/>
-          </svg>
-          <!-- Vertical text: two parallel columns, subtitle on left (inner side) -->
-          <div class="flex flex-row items-center justify-center mr-1" style="height:100%;gap:4px;">
-            <span class="text-emerald-400" style="writing-mode:vertical-rl;font-size:13px;line-height:1;">(Metrics inform better design)</span>
-            <span class="font-extrabold text-emerald-600" style="writing-mode:vertical-rl;font-size:18px;letter-spacing:0.08em;line-height:1;">TOP-DOWN OPTIMIZATION FLOW</span>
-          </div>
+        <!-- Right side: top-down image -->
+        <div class="hidden lg:block absolute pointer-events-none" style="right:-180px;top:50%;transform:translateY(-50%);width:480px;z-index:0;">
+          <img src="imgs/top-down.png" alt="Top-down optimization flow" style="width:960px;height:960px;object-fit:contain;">
         </div>
 
-        <div class="flex flex-col items-center gap-3 lg:px-24">
+        <div class="flex flex-col items-center gap-3 lg:px-24" style="position:relative;z-index:1;">
 
           <!-- Application (narrowest) -->
           <div class="w-full rounded-2xl border-2 border-violet-300 px-6 py-5 text-center" style="max-width:44%;background:linear-gradient(135deg,#f5f3ff,#ede9fe);">
-            <div class="text-xs font-extrabold text-violet-700 uppercase tracking-widest mb-4">Software Applications &amp; Systems</div>
+            <div class="text-xs font-extrabold text-violet-700 uppercase tracking-widest mb-4"><i class="fa-solid fa-display mr-1"></i>Software Applications &amp; Systems</div>
             <div class="flex flex-wrap justify-center gap-2">
               <a href="https://dl.acm.org/doi/10.1145/3695053.3731023" target="_blank" class="group bg-white hover:bg-violet-600 border border-violet-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
-                <div class="text-xs font-bold text-violet-700 group-hover:text-white">FAIR-CO&#8322;</div>
-                <div class="text-xs text-violet-400 group-hover:text-violet-200 leading-tight mt-0.5">Software Carbon Attribution</div>
+                <div class="text-sm font-bold text-violet-700 group-hover:text-white"><i class="fa-solid fa-scale-balanced mr-1"></i>FAIR-CO&#8322;</div>
+                <div class="text-xs text-violet-400 group-hover:text-violet-200 leading-tight mt-0.5">Operational Carbon</div>
+                <img src="imgs/Fair-CO2.png" alt="FAIR-CO2 chart" class="mt-2 w-full rounded object-contain max-h-20">
               </a>
             </div>
           </div>
 
           <!-- Infrastructure -->
           <div class="w-full rounded-2xl border-2 border-blue-300 px-6 py-5 text-center" style="max-width:66%;background:linear-gradient(135deg,#eff6ff,#dbeafe);">
-            <div class="text-xs font-extrabold text-blue-700 uppercase tracking-widest mb-4">Hardware Systems &amp; Infrastructure</div>
+            <div class="text-xs font-extrabold text-blue-700 uppercase tracking-widest mb-4"><i class="fa-solid fa-server mr-1"></i>Hardware Systems &amp; Infrastructure</div>
             <div class="flex flex-wrap justify-center gap-2">
               <a href="https://github.com/S4AI-CornellTech/MicroGreen" target="_blank" class="group bg-white hover:bg-blue-600 border border-blue-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
-                <div class="text-xs font-bold text-blue-700 group-hover:text-white">MicroGreen</div>
+                <div class="text-sm font-bold text-blue-700 group-hover:text-white"><i class="fa-solid fa-leaf mr-1"></i>MicroGreen</div>
                 <div class="text-xs text-blue-400 group-hover:text-blue-200 leading-tight mt-0.5">Edge ML &amp; IoT Lifecycle</div>
+                <img src="imgs/MicroGreen.png" alt="MicroGreen chart" class="mt-2 w-full rounded object-contain max-h-20">
               </a>
               <a href="https://arxiv.org/abs/2502.05043" target="_blank" class="group bg-white hover:bg-blue-600 border border-blue-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
-                <div class="text-xs font-bold text-blue-700 group-hover:text-white">EcoServe</div>
+                <div class="text-sm font-bold text-blue-700 group-hover:text-white"><i class="fa-solid fa-server mr-1"></i>EcoServe</div>
                 <div class="text-xs text-blue-400 group-hover:text-blue-200 leading-tight mt-0.5">Inference Server Lifecycle</div>
+                <img src="imgs/EcoServe.png" alt="EcoServe chart" class="mt-2 w-full rounded object-contain max-h-20">
               </a>
             </div>
           </div>
 
           <!-- Components / IC -->
           <div class="w-full rounded-2xl border-2 border-emerald-300 px-6 py-5 text-center" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);">
-            <div class="text-xs font-extrabold text-emerald-700 uppercase tracking-widest mb-4">Architecture &amp; Components / IC</div>
+            <div class="text-xs font-extrabold text-emerald-700 uppercase tracking-widest mb-4"><i class="fa-solid fa-microchip mr-1"></i>Architecture &amp; Components / IC</div>
             <div class="flex flex-wrap justify-center gap-2">
               <a href="https://github.com/facebookresearch/ACT" target="_blank" class="group bg-white hover:bg-emerald-600 border border-emerald-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
-                <div class="text-xs font-bold text-emerald-700 group-hover:text-white">ACT</div>
-                <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight mt-0.5">Embodied Carbon Estimation</div>
+                <div class="text-sm font-bold text-emerald-700 group-hover:text-white"><i class="fa-solid fa-microchip mr-1"></i>ACT</div>
+                <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight mt-0.5">Embodied Carbon</div>
+                <img src="imgs/ACT.png" alt="ACT chart" class="mt-2 w-full rounded object-contain max-h-20">
               </a>
               <a href="https://arxiv.org/pdf/2507.01145" target="_blank" class="group bg-white hover:bg-emerald-600 border border-emerald-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
-                <div class="text-xs font-bold text-emerald-700 group-hover:text-white">CarbonClarity</div>
+                <div class="text-sm font-bold text-emerald-700 group-hover:text-white"><i class="fa-solid fa-magnifying-glass mr-1"></i>CarbonClarity</div>
                 <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight mt-0.5">Supply Chain Uncertainty</div>
+                <img src="imgs/CarbonClarity.png" alt="CarbonClarity chart" class="mt-2 w-full rounded object-contain max-h-20">
               </a>
               <a href="https://dl.acm.org/doi/10.1145/3665314.3670838" target="_blank" class="group bg-white hover:bg-emerald-600 border border-emerald-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
-                <div class="text-xs font-bold text-emerald-700 group-hover:text-white">3D-IC</div>
+                <div class="text-sm font-bold text-emerald-700 group-hover:text-white"><i class="fa-solid fa-layer-group mr-1"></i>3D-IC</div>
                 <div class="text-xs text-emerald-500 group-hover:text-emerald-200 leading-tight mt-0.5">3D Integration Carbon</div>
+                <img src="imgs/3D-IC.jpg" alt="3D-IC chart" class="mt-2 w-full rounded object-contain max-h-20">
               </a>
             </div>
           </div>
 
           <!-- Circuits & Devices (widest) -->
           <div class="w-full rounded-2xl border-2 border-orange-300 px-6 py-5 text-center" style="background:linear-gradient(135deg,#fff7ed,#ffedd5);">
-            <div class="text-xs font-extrabold text-orange-700 uppercase tracking-widest mb-4">Circuits &amp; Devices</div>
+            <div class="text-xs font-extrabold text-orange-700 uppercase tracking-widest mb-4"><i class="fa-solid fa-industry mr-1"></i>Circuits &amp; Devices</div>
             <div class="flex flex-wrap justify-center gap-2">
               <a href="https://arxiv.org/abs/2602.05018" target="_blank" class="group bg-white hover:bg-orange-500 border border-orange-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
-                <div class="text-xs font-bold text-orange-700 group-hover:text-white">COFFEE</div>
+                <div class="text-sm font-bold text-orange-700 group-hover:text-white"><i class="fa-solid fa-bolt mr-1"></i>COFFEE</div>
                 <div class="text-xs text-orange-400 group-hover:text-orange-200 leading-tight mt-0.5">Circuit-level AI Hardware</div>
+                <img src="imgs/COFFEE.png" alt="COFFEE chart" class="mt-2 w-full rounded object-contain max-h-20">
               </a>
               <a href="https://ieeexplore.ieee.org/document/11240809" target="_blank" class="group bg-white hover:bg-orange-500 border border-orange-300 rounded-lg px-4 py-2 transition-all shadow-sm text-center min-w-[130px]">
-                <div class="text-xs font-bold text-orange-700 group-hover:text-white">EPiCarbon</div>
+                <div class="text-sm font-bold text-orange-700 group-hover:text-white"><i class="fa-solid fa-atom mr-1"></i>EPiCarbon</div>
                 <div class="text-xs text-orange-400 group-hover:text-orange-200 leading-tight mt-0.5">Device-level Emissions</div>
+                <img src="imgs/Epicarbon.png" alt="EPiCarbon chart" class="mt-2 w-full rounded object-contain max-h-20">
               </a>
             </div>
           </div>
@@ -570,51 +557,72 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
         <!-- ACT -->
-        <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow">
+        <a href="https://github.com/facebookresearch/ACT" target="_blank" class="block bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md hover:border-emerald-400 transition-all">
           <div class="text-2xl font-extrabold text-slate-700 mb-1">ACT</div>
           <div class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">ISCA 2022 &middot; Foundation</div>
           <p class="text-sm text-slate-600 leading-relaxed">The first fast, accessible tool for estimating embodied carbon during early hardware design space exploration. Enables carbon as a first-order design target alongside power and performance.</p>
-        </div>
+          <img src="imgs/ACT.png" alt="ACT chart" class="mt-4 w-full rounded-lg object-contain max-h-44">
+        </a>
 
         <!-- CarbonClarity -->
-        <div class="bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md transition-shadow">
+        <a href="https://arxiv.org/pdf/2507.01145" target="_blank" class="block bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md hover:border-emerald-400 transition-all">
           <div class="flex items-start justify-between mb-1">
             <div class="text-2xl font-extrabold text-emerald-700">CarbonClarity</div>
             <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">New</span>
           </div>
           <div class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">ICCAD 2025 &middot; Uncertainty</div>
           <p class="text-sm text-slate-600 leading-relaxed">Uncertainty estimation in the global IC supply chain for AI chips &mdash; enabling more credible and rigorous carbon claims in research.</p>
-        </div>
+          <img src="imgs/CarbonClarity.png" alt="CarbonClarity chart" class="mt-4 w-full rounded-lg object-contain max-h-44">
+        </a>
 
         <!-- COFFEE -->
-        <div class="bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md transition-shadow">
+        <a href="https://arxiv.org/abs/2602.05018" target="_blank" class="block bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md hover:border-emerald-400 transition-all">
           <div class="flex items-start justify-between mb-1">
             <div class="text-2xl font-extrabold text-emerald-700">COFFEE</div>
             <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">New</span>
           </div>
           <div class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">DATE 2026 &middot; In-Memory Computing</div>
           <p class="text-sm text-slate-600 leading-relaxed">AI-specific hardware accounting including emerging non-volatile memories for in-memory computing architectures.</p>
-        </div>
+          <img src="imgs/COFFEE.png" alt="COFFEE chart" class="mt-4 w-full rounded-lg object-contain max-h-44">
+        </a>
 
         <!-- MicroGreen / EcoServe -->
-        <div class="bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md transition-shadow">
+        <a href="https://github.com/S4AI-CornellTech/MicroGreen" target="_blank" class="block bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md hover:border-emerald-400 transition-all">
           <div class="flex items-start justify-between mb-1">
             <div class="text-2xl font-extrabold text-emerald-700">MicroGreen</div>
             <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">New</span>
           </div>
           <div class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">Under Submission &middot; GPU Lifecycle</div>
           <p class="text-sm text-slate-600 leading-relaxed">Full-system lifecycle analysis for GPUs and high-performance AI accelerators, including EcoServe for large-scale inference systems.</p>
-        </div>
+          <img src="imgs/MicroGreen.png" alt="MicroGreen chart" class="mt-4 w-full rounded-lg object-contain max-h-44">
+        </a>
 
         <!-- FAIR-CO2 -->
-        <div class="bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md transition-shadow">
+        <a href="https://dl.acm.org/doi/10.1145/3695053.3731023" target="_blank" class="block bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md hover:border-emerald-400 transition-all">
           <div class="flex items-start justify-between mb-1">
             <div class="text-2xl font-extrabold text-emerald-700">FAIR-CO&#8322;</div>
             <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">New</span>
           </div>
           <div class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">ISCA 2025 &middot; Software Attribution</div>
           <p class="text-sm text-slate-600 leading-relaxed">Software-level carbon attribution for fair accounting in shared AI cloud environments, drawing on ideas from economics and game theory.</p>
-        </div>
+          <img src="imgs/Fair-CO2.png" alt="FAIR-CO2 chart" class="mt-4 w-full rounded-lg object-contain max-h-44">
+        </a>
+
+        <!-- 3D-IC -->
+        <a href="https://dl.acm.org/doi/10.1145/3665314.3670838" target="_blank" class="block bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md hover:border-emerald-400 transition-all">
+          <div class="text-2xl font-extrabold text-slate-700 mb-1">3D-IC</div>
+          <div class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">DAC 2024 &middot; 3D Integration</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Carbon modeling for 3D integrated circuits, capturing the unique manufacturing and assembly footprint of chiplet-based designs.</p>
+          <img src="imgs/3D-IC.jpg" alt="3D-IC chart" class="mt-4 w-full rounded-lg object-contain max-h-44">
+        </a>
+
+        <!-- EPiCarbon -->
+        <a href="https://ieeexplore.ieee.org/document/11240809" target="_blank" class="block bg-white rounded-xl shadow-sm border border-emerald-100 ring-1 ring-emerald-200 p-6 hover:shadow-md hover:border-emerald-400 transition-all">
+          <div class="text-2xl font-extrabold text-slate-700 mb-1">EPiCarbon</div>
+          <div class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">IEEE &middot; Device-level Emissions</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Device-level carbon emission modeling for advanced semiconductor processes, enabling fab-aware sustainability analysis.</p>
+          <img src="imgs/Epicarbon.png" alt="EPiCarbon chart" class="mt-4 w-full rounded-lg object-contain max-h-44">
+        </a>
 
       </div>
     </div>
