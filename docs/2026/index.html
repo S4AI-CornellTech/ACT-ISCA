@@ -23,7 +23,6 @@
         <a href="#about" class="hover:text-emerald-300">About</a>
         <a href="#tools" class="hover:text-emerald-300">Tools</a>
         <a href="#schedule" class="hover:text-emerald-300">Schedule</a>
-        <a href="#speakers" class="hover:text-emerald-300">Speakers</a>
         <a href="#organizers" class="hover:text-emerald-300">Organizers</a>
       </div>
       <div class="flex items-center gap-3">
@@ -39,7 +38,6 @@
       <a href="#about" class="hover:text-emerald-300 py-1 border-b border-emerald-800">About</a>
       <a href="#tools" class="hover:text-emerald-300 py-1 border-b border-emerald-800">Tools</a>
       <a href="#schedule" class="hover:text-emerald-300 py-1 border-b border-emerald-800">Schedule</a>
-      <a href="#speakers" class="hover:text-emerald-300 py-1 border-b border-emerald-800">Speakers</a>
       <a href="#organizers" class="hover:text-emerald-300 py-1">Organizers</a>
     </div>
   </nav>
@@ -74,7 +72,7 @@
               &#128205; <span>Venue: TBD</span>
             </span>
             <span class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
-              &#9201; <span>9:00 AM &ndash; 1:00 PM</span>
+              &#9201; <span>1:30 PM &ndash; 5:00 PM EDT</span>
             </span>
           </div>
         </div>
@@ -87,7 +85,7 @@
 
   <!-- Stats bar -->
   <div class="bg-emerald-50 border-b border-emerald-100 py-6">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
       <div>
         <div class="text-2xl font-bold text-emerald-700">~4%</div>
         <div class="text-xs text-slate-500 mt-1">of global carbon emissions from computing</div>
@@ -97,12 +95,8 @@
         <div class="text-xs text-slate-500 mt-1">Open-source modeling suite</div>
       </div>
       <div>
-        <div class="text-2xl font-bold text-emerald-700">4 Papers</div>
-        <div class="text-xs text-slate-500 mt-1">ISCA, ICCAD, DATE 2025&ndash;26</div>
-      </div>
-      <div>
-        <div class="text-2xl font-bold text-emerald-700">~6 Talks</div>
-        <div class="text-xs text-slate-500 mt-1">Academia &amp; industry invited speakers</div>
+        <div class="text-2xl font-bold text-emerald-700">7 Papers</div>
+        <div class="text-xs text-slate-500 mt-1">ISCA, ICCAD, DATE, MobiSys, ISLPED</div>
       </div>
     </div>
   </div>
@@ -656,7 +650,7 @@
       <h2 class="text-3xl font-bold mb-2 text-emerald-900">Schedule</h2>
       <div class="w-16 h-1 bg-emerald-500 rounded mb-4"></div>
       <p class="text-slate-500 text-sm mb-8">
-        Half-day tutorial &middot; 9:00 AM &ndash; 1:00 PM &middot;
+        Half-day tutorial &middot; 1:30 PM &ndash; 5:00 PM EDT &middot;
         <span class="inline-flex items-center gap-1 bg-emerald-100 text-emerald-700 text-xs px-2 py-0.5 rounded-full font-semibold">New</span>
         <span class="text-slate-400 text-xs ml-1">sessions are new additions from the previous iteration</span>
       </p>
@@ -672,65 +666,102 @@
           </thead>
           <tbody>
             <tr class="bg-white border-b border-slate-100">
-              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">9:00&ndash;9:45</td>
+              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">1:30&ndash;2:00</td>
               <td class="px-6 py-4">
-                <div class="font-semibold text-slate-800">Sustainable Computing: Motivation</div>
-                <div class="text-xs text-slate-400 mt-1">Overview of carbon modeling and accounting strategies</div>
+                <div class="font-semibold text-slate-800">Motivation &amp; Introduction</div>
+                <div class="text-xs text-slate-400 mt-1">Overview of sustainable computing and the case for full-stack carbon accounting</div>
               </td>
               <td class="px-6 py-4 text-slate-600 text-sm">Udit Gupta</td>
             </tr>
             <tr class="bg-slate-50 border-b border-slate-100">
-              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">9:45&ndash;10:15</td>
+              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">2:00&ndash;2:30</td>
               <td class="px-6 py-4">
                 <div class="font-semibold text-slate-800">Hands-on: ACT</div>
-                <div class="text-xs text-slate-400 mt-1">How to use and extend ACT</div>
+                <div class="text-xs text-slate-400 mt-1">How to use and extend ACT for embodied carbon estimation</div>
               </td>
               <td class="px-6 py-4 text-slate-600 text-sm">Leo Han</td>
             </tr>
-            <tr class="bg-emerald-50 border-b border-slate-100">
-              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">10:15&ndash;10:45</td>
+            <tr class="bg-orange-50 border-b border-slate-100">
+              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">2:30&ndash;2:50</td>
               <td class="px-6 py-4">
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="font-semibold text-slate-800">Hands-on: Modeling Uncertainty in Carbon Accounting</span>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="font-semibold text-slate-800">Hands-on: Device-Level Carbon Accounting</span>
                   <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">New</span>
                 </div>
-                <div class="text-xs text-slate-400">CarbonClarity &mdash; IC supply chain uncertainty estimation</div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-medium">Circuits &amp; Devices</span>
+                  <span class="text-xs text-slate-400">COFFEE &mdash; circuit-level carbon accounting for AI hardware</span>
+                </div>
               </td>
               <td class="px-6 py-4 text-slate-600 text-sm">Xuesi Chen</td>
             </tr>
             <tr class="bg-emerald-50 border-b border-slate-100">
-              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">10:45&ndash;11:15</td>
+              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">2:50&ndash;3:10</td>
               <td class="px-6 py-4">
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="font-semibold text-slate-800">Hands-on: Full System Life Cycle Analyses</span>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="font-semibold text-slate-800">Hands-on: Uncertainty in Carbon Accounting</span>
                   <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">New</span>
                 </div>
-                <div class="text-xs text-slate-400">GPUs &middot; Mobile and embedded systems</div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-medium">Supply Chain / IC</span>
+                  <span class="text-xs text-slate-400">CarbonClarity &mdash; IC supply chain uncertainty estimation</span>
+                </div>
               </td>
               <td class="px-6 py-4 text-slate-600 text-sm">Xuesi Chen</td>
             </tr>
-            <tr class="bg-slate-50 border-b border-slate-100">
-              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">11:15&ndash;11:45</td>
+            <tr class="bg-blue-50 border-b border-slate-100">
+              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">3:10&ndash;3:30</td>
               <td class="px-6 py-4">
-                <div class="font-semibold text-slate-800">Hands-on: Software-Level Carbon Attribution</div>
-                <div class="text-xs text-slate-400 mt-1">FAIR-CO&#8322; &mdash; fair accounting in shared cloud environments</div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="font-semibold text-slate-800">Hands-on: Mobile &amp; Embedded System Lifecycle</span>
+                  <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">New</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">Hardware Systems</span>
+                  <span class="text-xs text-slate-400">MicroGreen &mdash; edge ML &amp; IoT lifecycle carbon</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-slate-600 text-sm">Xuesi Chen</td>
+            </tr>
+            <tr class="bg-amber-50 border-b border-slate-100">
+              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">3:30&ndash;4:00</td>
+              <td class="px-6 py-4">
+                <div class="font-semibold text-slate-600">&#9749; Coffee Break</div>
+              </td>
+              <td class="px-6 py-4 text-slate-400 text-sm"></td>
+            </tr>
+            <tr class="bg-blue-50 border-b border-slate-100">
+              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">4:00&ndash;4:20</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="font-semibold text-slate-800">Hands-on: GPU &amp; Inference Server Lifecycle</span>
+                  <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">New</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">Hardware Systems</span>
+                  <span class="text-xs text-slate-400">EcoServe &mdash; large-scale inference server lifecycle carbon</span>
+                </div>
               </td>
               <td class="px-6 py-4 text-slate-600 text-sm">Leo Han</td>
             </tr>
-            <tr class="bg-white border-b border-slate-100">
-              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">11:45&ndash;12:00</td>
+            <tr class="bg-violet-50 border-b border-slate-100">
+              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">4:20&ndash;4:40</td>
               <td class="px-6 py-4">
-                <div class="font-semibold text-slate-800">Emerging Carbon Accounting Extensions</div>
+                <div class="font-semibold text-slate-800 mb-1.5">Hands-on: Application-Level Carbon Attribution</div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full font-medium">Software Applications</span>
+                  <span class="text-xs text-slate-400">FAIR-CO&#8322; &mdash; fair accounting in shared cloud environments</span>
+                </div>
               </td>
-              <td class="px-6 py-4 text-slate-600 text-sm">Udit Gupta</td>
+              <td class="px-6 py-4 text-slate-600 text-sm">Leo Han</td>
             </tr>
-            <tr class="bg-emerald-900 text-white">
-              <td class="px-6 py-4 font-mono text-xs whitespace-nowrap text-emerald-300">12:00&ndash;1:00</td>
+            <tr class="bg-slate-50">
+              <td class="px-6 py-4 text-slate-400 font-mono text-xs whitespace-nowrap">4:40&ndash;5:00</td>
               <td class="px-6 py-4">
-                <div class="font-semibold">Invited Talks</div>
-                <div class="text-emerald-300 text-xs mt-1">~6 talks &times; ~15 minutes each</div>
+                <div class="font-semibold text-slate-800">Discussion</div>
+                <div class="text-xs text-slate-400 mt-1">Open Q&amp;A and discussion on open problems in sustainable computing</div>
               </td>
-              <td class="px-6 py-4 text-emerald-300 text-sm">See below</td>
+              <td class="px-6 py-4 text-slate-600 text-sm">All</td>
             </tr>
           </tbody>
         </table>
@@ -738,252 +769,6 @@
     </div>
   </section>
 
-  <!-- Invited Speakers teaser -->
-  <section id="speakers" class="py-20 bg-slate-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-2 text-emerald-900">Invited Speakers</h2>
-      <div class="w-16 h-1 bg-emerald-500 rounded mb-4"></div>
-      <p class="text-slate-600 text-sm mb-3 max-w-2xl">
-        We are assembling an exciting lineup of researchers and practitioners spanning the full computing stack — from device physics to AI systems — across academia and industry.
-      </p>
-
-      <!-- Topic badges -->
-      <div class="flex flex-wrap gap-2 mb-10">
-        <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-medium">Device &amp; Fab</span>
-        <span class="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-medium">Chiplets &amp; 3D-IC</span>
-        <span class="text-xs bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full font-medium">Architecture</span>
-        <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Systems &amp; Cloud</span>
-        <span class="text-xs bg-violet-100 text-violet-700 px-3 py-1 rounded-full font-medium">AI &amp; LLMs</span>
-      </div>
-
-      <!-- Animated placeholder cards -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-        <style>
-          @keyframes shimmer { 0%{background-position:-400px 0} 100%{background-position:400px 0} }
-          .shimmer { background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 400px 100%; animation: shimmer 1.6s infinite; }
-        </style>
-        <!-- 6 placeholder cards -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="shimmer w-11 h-11 rounded-full flex-shrink-0"></div>
-            <div class="flex-1 space-y-2">
-              <div class="shimmer h-3 rounded w-3/4"></div>
-              <div class="shimmer h-2.5 rounded w-1/2"></div>
-            </div>
-          </div>
-          <div class="shimmer h-2.5 rounded w-full mb-2"></div>
-          <div class="shimmer h-2.5 rounded w-4/5"></div>
-          <div class="shimmer h-5 rounded-full w-20 mt-4"></div>
-        </div>
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="shimmer w-11 h-11 rounded-full flex-shrink-0"></div>
-            <div class="flex-1 space-y-2">
-              <div class="shimmer h-3 rounded w-2/3"></div>
-              <div class="shimmer h-2.5 rounded w-2/5"></div>
-            </div>
-          </div>
-          <div class="shimmer h-2.5 rounded w-full mb-2"></div>
-          <div class="shimmer h-2.5 rounded w-3/5"></div>
-          <div class="shimmer h-5 rounded-full w-24 mt-4"></div>
-        </div>
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="shimmer w-11 h-11 rounded-full flex-shrink-0"></div>
-            <div class="flex-1 space-y-2">
-              <div class="shimmer h-3 rounded w-4/5"></div>
-              <div class="shimmer h-2.5 rounded w-1/3"></div>
-            </div>
-          </div>
-          <div class="shimmer h-2.5 rounded w-full mb-2"></div>
-          <div class="shimmer h-2.5 rounded w-2/3"></div>
-          <div class="shimmer h-5 rounded-full w-16 mt-4"></div>
-        </div>
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="shimmer w-11 h-11 rounded-full flex-shrink-0"></div>
-            <div class="flex-1 space-y-2">
-              <div class="shimmer h-3 rounded w-3/5"></div>
-              <div class="shimmer h-2.5 rounded w-2/5"></div>
-            </div>
-          </div>
-          <div class="shimmer h-2.5 rounded w-full mb-2"></div>
-          <div class="shimmer h-2.5 rounded w-4/5"></div>
-          <div class="shimmer h-5 rounded-full w-20 mt-4"></div>
-        </div>
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="shimmer w-11 h-11 rounded-full flex-shrink-0"></div>
-            <div class="flex-1 space-y-2">
-              <div class="shimmer h-3 rounded w-3/4"></div>
-              <div class="shimmer h-2.5 rounded w-1/2"></div>
-            </div>
-          </div>
-          <div class="shimmer h-2.5 rounded w-full mb-2"></div>
-          <div class="shimmer h-2.5 rounded w-1/2"></div>
-          <div class="shimmer h-5 rounded-full w-28 mt-4"></div>
-        </div>
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="shimmer w-11 h-11 rounded-full flex-shrink-0"></div>
-            <div class="flex-1 space-y-2">
-              <div class="shimmer h-3 rounded w-2/3"></div>
-              <div class="shimmer h-2.5 rounded w-1/3"></div>
-            </div>
-          </div>
-          <div class="shimmer h-2.5 rounded w-full mb-2"></div>
-          <div class="shimmer h-2.5 rounded w-3/4"></div>
-          <div class="shimmer h-5 rounded-full w-20 mt-4"></div>
-        </div>
-      </div>
-
-      <!-- CTA banner -->
-      <div class="bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
-          <div class="text-white font-bold text-lg mb-1">Speaker announcements coming soon</div>
-          <div class="text-emerald-50 text-sm">Follow us on GitHub or check back for updates as we confirm speakers from top universities and companies.</div>
-        </div>
-        <a href="https://github.com/S4AI-CornellTech/ACT" target="_blank"
-           class="flex-shrink-0 bg-white text-emerald-700 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-emerald-50 transition-colors whitespace-nowrap">
-          Watch on GitHub &rarr;
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Invited Speakers (hidden until confirmed) -->
-  <section id="speakers-full" class="py-20 bg-slate-50 hidden">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-2 text-emerald-900">Invited Speakers</h2>
-      <div class="w-16 h-1 bg-emerald-500 rounded mb-4"></div>
-      <p class="text-slate-500 text-sm mb-10">
-        Spanning devices, chiplets, architecture, systems, and industry &mdash; representing diversity in technical expertise, institution, and background.
-      </p>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <!-- Gage Hill & Mariam Elgamal -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs flex-shrink-0">GH&middot;ME</div>
-            <div>
-              <div class="font-semibold text-slate-800 text-sm">Gage Hill &amp; Mariam Elgamal</div>
-              <div class="text-xs text-slate-400">Harvard University</div>
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 leading-relaxed">Devices, circuits, and design tools using ACT</div>
-          <span class="inline-block mt-3 text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Devices &amp; Circuits</span>
-        </div>
-
-        <!-- Ajay Joshi -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs flex-shrink-0">AJ</div>
-            <div>
-              <div class="font-semibold text-slate-800 text-sm">Ajay Joshi</div>
-              <div class="text-xs text-slate-400">Boston University</div>
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 leading-relaxed">Silicon photonics for sustainable computing</div>
-          <span class="inline-block mt-3 text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Silicon Photonics</span>
-        </div>
-
-        <!-- Celine Lin -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs flex-shrink-0">CL</div>
-            <div>
-              <div class="font-semibold text-slate-800 text-sm">Celine Lin</div>
-              <div class="text-xs text-slate-400">Georgia Tech</div>
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 leading-relaxed">3D integration and carbon-aware IC design</div>
-          <span class="inline-block mt-3 text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">3D Integration</span>
-        </div>
-
-        <!-- Vidya Chabria -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs flex-shrink-0">VC</div>
-            <div>
-              <div class="font-semibold text-slate-800 text-sm">Vidya Chabria</div>
-              <div class="text-xs text-slate-400">Arizona State University</div>
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 leading-relaxed">Chiplet-based architectures and carbon modeling</div>
-          <span class="inline-block mt-3 text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Chiplets</span>
-        </div>
-
-        <!-- Lieven Eeckhout -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs flex-shrink-0">LE</div>
-            <div>
-              <div class="font-semibold text-slate-800 text-sm">Lieven Eeckhout</div>
-              <div class="text-xs text-slate-400">Ghent University</div>
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 leading-relaxed">First-order computer architecture models for carbon</div>
-          <span class="inline-block mt-3 text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Architecture Models</span>
-        </div>
-
-        <!-- Matthew Sinclair -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs flex-shrink-0">MS</div>
-            <div>
-              <div class="font-semibold text-slate-800 text-sm">Matthew Sinclair</div>
-              <div class="text-xs text-slate-400">University of Wisconsin</div>
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 leading-relaxed">gem5 integration with ACT for simulation-driven carbon analysis</div>
-          <span class="inline-block mt-3 text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">gem5 &middot; Simulation</span>
-        </div>
-
-        <!-- Alex Jones & Peipei Zhou -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs flex-shrink-0">AJ&middot;PZ</div>
-            <div>
-              <div class="font-semibold text-slate-800 text-sm">Alex Jones &amp; Peipei Zhou</div>
-              <div class="text-xs text-slate-400">University of Pittsburgh &middot; NSF</div>
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 leading-relaxed">AI systems lifecycle and sustainability analysis</div>
-          <span class="inline-block mt-3 text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">AI Systems</span>
-        </div>
-
-        <!-- Daniel Berger -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs flex-shrink-0">DB</div>
-            <div>
-              <div class="font-semibold text-slate-800 text-sm">Daniel Berger</div>
-              <div class="text-xs text-slate-400">Microsoft</div>
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 leading-relaxed">Industry perspective on sustainable AI infrastructure</div>
-          <span class="inline-block mt-3 text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Industry</span>
-        </div>
-
-        <!-- Carole-Jean Wu -->
-        <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <img src="imgs/carole_jean_wu.jpg" alt="Carole-Jean Wu" class="w-11 h-11 rounded-full object-cover flex-shrink-0">
-            <div>
-              <div class="font-semibold text-slate-800 text-sm">Carole-Jean Wu</div>
-              <div class="text-xs text-slate-400">Meta</div>
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 leading-relaxed">Industry leadership in sustainable AI at scale</div>
-          <span class="inline-block mt-3 text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Industry</span>
-        </div>
-
-      </div>
-
-      <p class="text-xs text-slate-400 mt-6 italic">Speaker list is tentative. Confirmations pending.</p>
-    </div>
-  </section>
 
   <!-- Resources (hidden) -->
   <section id="resources" class="py-20 bg-slate-50 hidden">
@@ -1225,27 +1010,6 @@
     </div>
   </section>
 
-  <!-- Citation -->
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-2 text-emerald-900">Citation</h2>
-      <div class="w-16 h-1 bg-emerald-500 rounded mb-6"></div>
-      <p class="text-slate-500 text-sm mb-4">If you use ACT in your research, please cite:</p>
-      <div class="bg-slate-900 text-slate-300 rounded-xl p-6 text-sm font-mono leading-relaxed overflow-x-auto max-w-3xl">
-        <pre>@inproceedings{gupta2022act,
-  title={ACT: designing sustainable computer systems
-         with an architectural carbon modeling tool},
-  author={Gupta, Udit and Elgamal, Mariam and Hills, Gage
-          and Wei, Gu-Yeon and Lee, Hsien-Hsin S
-          and Brooks, David and Wu, Carole-Jean},
-  booktitle={Proceedings of the 49th Annual International
-             Symposium on Computer Architecture},
-  pages={784--799},
-  year={2022}
-}</pre>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="bg-slate-100 border-t border-slate-200 py-8 px-6">
